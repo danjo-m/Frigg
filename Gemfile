@@ -1,3 +1,4 @@
+# coding: utf-8
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -52,3 +53,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Add bootstrap
+# less(CSS)対応（後述LESSを使う場合）
+gem 'less-rails'
+# JavaScript のエンジンである v8 を Ruby から使えるようにする
+gem 'therubyracer'
+# JavaScriptコードを実行するためのエンジン
+gem 'execjs'
+
+# Twitter社が提供しているCSSとJavaScriptのフレームワーク
+gem 'twitter-bootstrap-rails'

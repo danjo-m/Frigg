@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Step -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @step.description %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @step.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @step.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= @step.date %></dd>
+</dl>
 
-<p>
-  <strong>User:</strong>
-  <%= @step.user_id %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @step.date %>
-</p>
-
-<%= link_to 'Edit', edit_step_path(@step) %> |
-<%= link_to 'Back', steps_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              steps_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_step_path(@step), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              step_path(@step),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
