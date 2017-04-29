@@ -56,7 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add bootstrap
 # less(CSS)対応（後述LESSを使う場合）
-gem 'less-rails'
+gem 'less-rails', git: 'https://github.com/MustafaZain/less-rails'
 # JavaScript のエンジンである v8 を Ruby から使えるようにする
 gem 'therubyracer'
 # JavaScriptコードを実行するためのエンジン
